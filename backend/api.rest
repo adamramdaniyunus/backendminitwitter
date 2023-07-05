@@ -1,0 +1,73 @@
+POST http://localhost:5001/register
+Content-Type: application/json
+
+{
+    "username": "RamdaniYunus",
+    "password": "1234567890",
+    "confpassword": "1234567890",
+    "firstname": "Adam",
+    "lastname": "Ramdani"
+}
+
+###
+GET http://localhost:5001/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGEyMzkzOGZjMTU0NDM4ZDdmZjM4YjIiLCJ1c2VyTmFtZSI6IkFkYW1yYW1kYW5pWXVudXMiLCJpYXQiOjE2ODgzNTYxNjMsImV4cCI6MTY4ODM1OTc2M30.yS_Er1X7uS7ZJjL_fCKM8BiCt4XWzP7N-zIfcmlNnkc
+
+###
+POST http://localhost:5001/unfollow/64a23938fc154438d7ff38b2
+Content-Type: application/json
+
+{
+    "_id": "64a23957fc154438d7ff38b7"
+}
+
+###
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "username": "AdamramdaniYunus",
+    "password": "1234567890"
+}
+
+
+###
+POST http://localhost:5001/post
+Content-Type: application/json
+
+{
+    "userId": "64a23938fc154438d7ff38b2",
+    "desc": "Postingan pertama apakah berhasil?"
+}
+
+
+###
+GET http://localhost:5001/post
+
+### 
+PATCH http://localhost:5001/post/64a249a84696e5e7d6741039
+Content-Type: application/json
+
+{
+    "userId": "64a23938fc154438d7ff38b2",
+    "desc": "Postingan pertama apakah berhasil? Berhasil"
+}
+
+### 
+DELETE http://localhost:5001/post/64a249a84696e5e7d6741039
+Content-Type: application/json
+
+{
+    "userId": "64a23938fc154438d7ff38b2"
+}
+
+###
+POST http://localhost:5001/liked/64a26a341998bf648af3b43f
+Content-Type: application/json
+
+{
+    "userId": "64a23938fc154438d7ff38b2"
+}
+
+###
+GET http://localhost:5001/post/64a3dffdac8bf6a54004a4c4/timeline
